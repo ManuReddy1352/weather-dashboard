@@ -1,0 +1,23 @@
+:root {
+  --card: #1e293b;
+  --text: #f8fafc;
+  --accent: #38bdf8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: #020617;
+  color: var(--text);
+}
