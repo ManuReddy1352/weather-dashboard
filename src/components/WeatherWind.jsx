@@ -1,6 +1,7 @@
-function WeatherWind({ speed }) {
-  if (!speed || speed < 3) return null;
-  const count = speed > 6 ? 12 : 6;
+function WeatherWind({ speed = 0 }) {
+  if (!speed || speed < 2) return null;
+
+  const count = Math.min(Math.floor(speed * 2), 20);
 
   return (
     <div className="wind">
@@ -8,8 +9,9 @@ function WeatherWind({ speed }) {
         <span
           key={i}
           style={{
-            top: Math.random() * 100 + "%",
-            animationDuration: 2 + Math.random() * 3 + "s",
+            top: `${Math.random() * 100}vh`,
+            animationDuration: `${1.5 + Math.random()}s`,
+            opacity: Math.random(),
           }}
         />
       ))}
