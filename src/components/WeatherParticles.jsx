@@ -1,4 +1,6 @@
-function WeatherParticles({ type }) {
+import React from "react";
+
+const WeatherParticles = React.memo(function WeatherParticles({ type }) {
   if (!type) return null;
   const count = type === "snow" ? 35 : 55;
 
@@ -16,6 +18,6 @@ function WeatherParticles({ type }) {
       ))}
     </div>
   );
-}
+});
 
 export default WeatherParticles;

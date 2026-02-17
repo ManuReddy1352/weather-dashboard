@@ -1,6 +1,7 @@
 import { motion as Motion } from "framer-motion";
+import React from "react";
 
-function WeatherCard({ weather }) {
+const WeatherCard = React.memo(function WeatherCard({ weather }) {
   const icon = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   const date = new Date(weather.dt * 1000);
 
@@ -24,15 +25,24 @@ function WeatherCard({ weather }) {
       <p className="weather-desc">{weather.weather[0].description}</p>
 
       <p style={{ opacity: 0.85 }}>
-        {date.toLocaleDateString()} • {date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+        {date.toLocaleDateString()} •{" "}
+        {date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
       </p>
 
-      <div style={{ marginTop: "1rem", display: "flex", justifyContent: "space-between", fontSize: "0.9rem", opacity: 0.9 }}>
+      <div
+        style={{
+          marginTop: "1rem",
+          display: "flex",
+          justifyContent: "space-between",
+          fontSize: "0.9rem",
+          opacity: 0.9,
+        }}
+      >
         <span>Humidity: {weather.main.humidity}%</span>
         <span>Wind: {Math.round(weather.wind.speed)} m/s</span>
       </div>
     </Motion.div>
   );
-}
+});
 
 export default WeatherCard;

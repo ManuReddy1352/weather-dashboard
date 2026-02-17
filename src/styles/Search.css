@@ -1,0 +1,72 @@
+.search-form {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 11px 17px;
+  border-radius: 14px;
+  border: none;
+  width: 300px;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-input:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(217, 226, 231, 0.35);
+}
+
+.search-button {
+  padding: 12px 23px;
+  border-radius: 14px;
+  border: none;
+  background: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(52, 189, 248, 0.35);
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  z-index: 1;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 6px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(140%);
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.suggestion-item {
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.suggestion-item.active {
+  background: rgba(56,189,248,0.35);
+  border-radius: 8px;
+}
+
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

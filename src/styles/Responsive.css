@@ -1,0 +1,75 @@
+@media (max-width: 768px) {
+  .hourly {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weather-temp {
+    font-size: 42px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .hour {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    min-height: 100vh;
+    padding: 10px;
+    gap: 12px !important;
+  }
+
+  .weather-temp {
+    font-size: 32px !important;
+  }
+
+  .weather-city {
+    font-size: 20px !important;
+  }
+
+  .weather-desc {
+    font-size: 15px;
+  }
+
+  .weather-card {
+    padding-top: 14px !important;
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .action-buttons .nav-link {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .navbar {
+    gap: 6px;
+  }
+
+  .nav-link {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .app-title {
+    font-size: 24px !important;
+  }
+}

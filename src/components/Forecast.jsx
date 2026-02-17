@@ -1,4 +1,7 @@
-function Forecast({ data }) {
+import { motion as Motion } from "framer-motion";
+import React from "react";
+
+const Forecast = React.memo(function Forecast({ data }) {
   if (!data) return null;
 
   const hourly = data.list.slice(0, 8);
@@ -12,10 +15,20 @@ function Forecast({ data }) {
   const daily = Object.values(dailyMap).slice(0, 5);
 
   return (
-    <div className="forecast">
+    <Motion.div
+      className="forecast"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
       <div className="hourly">
         {hourly.map((h, i) => (
-          <div key={i} className="hour">
+          <Motion.div
+            key={i}
+            className="hour"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.05 }}
+          >
             <p>
               {new Date(h.dt_txt).toLocaleTimeString([], {
                 hour: "2-digit",
@@ -27,13 +40,19 @@ function Forecast({ data }) {
               alt=""
             />
             <p>{Math.round(h.main.temp)}°</p>
-          </div>
+          </Motion.div>
         ))}
       </div>
 
       <div className="daily">
         {daily.map((d, i) => (
-          <div key={i} className="day">
+          <Motion.div
+            key={i}
+            className="day"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.05 }}
+          >
             <p>
               {new Date(d.dt_txt).toLocaleDateString("en-US", {
                 weekday: "short",
@@ -44,11 +63,11 @@ function Forecast({ data }) {
               alt=""
             />
             <p>{Math.round(d.main.temp)}°</p>
-          </div>
+          </Motion.div>
         ))}
       </div>
-    </div>
+    </Motion.div>
   );
-}
+});
 
 export default Forecast;

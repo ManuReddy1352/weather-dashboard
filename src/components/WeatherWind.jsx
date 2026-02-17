@@ -1,4 +1,6 @@
-function WeatherWind({ speed = 0 }) {
+import React from "react";
+
+const WeatherWind = React.memo(function WeatherWind({ speed = 0 }) {
   if (!speed || speed < 2) return null;
 
   const count = Math.min(Math.floor(speed * 2), 20);
@@ -17,6 +19,6 @@ function WeatherWind({ speed = 0 }) {
       ))}
     </div>
   );
-}
+});
 
 export default WeatherWind;

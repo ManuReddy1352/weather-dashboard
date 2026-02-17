@@ -1,0 +1,91 @@
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bg-clear {
+  background: linear-gradient(135deg, #fde68a, #f59e0b);
+}
+
+.bg-clouds {
+  background: linear-gradient(135deg, #64748b, #334155);
+}
+
+.bg-rain {
+  background: linear-gradient(135deg, #1e293b, #020617);
+}
+
+.bg-snow {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+}
+
+.bg-thunder {
+  background: linear-gradient(135deg, #020617, #000000);
+}
+
+.bg-default {
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.particles,
+.wind {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particles span {
+  position: absolute;
+  top: -10px;
+}
+
+.particles.rain span {
+  width: 2px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  animation: rain 0.8s linear infinite;
+}
+
+@keyframes rain {
+  to {
+    transform: translate(150px, 110vh);
+  }
+}
+
+.wind span {
+  position: absolute;
+  left: -120px;
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation-name: windMove;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes windMove {
+  to {
+    transform: translateX(120vw);
+  }
+}
